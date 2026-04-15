@@ -3,7 +3,6 @@
 int main(void)
 {
     int answer, user, times =0;
-    bool is_correct = false;
     
     scanf("%d", &answer);
     
@@ -18,9 +17,8 @@ int main(void)
         }
         else {
             printf("%d==?\n", user);
-            is_correct = true;
         }
-    }while(!is_correct);
+    }while(user!=answer);
     
     printf("%d", times);
 
