@@ -17,7 +17,7 @@ int main(void)
             printf("%d>?\n", user);
         }
         else {
-            printf("%d==\n", user);
+            printf("%d==?\n", user);
             is_correct = true;
         }
     }while(!is_correct);
