@@ -12,13 +12,13 @@ int main(void)
         scanf("%c", &ch);
         
         if (ch>='0'&&ch<='9') {
-            if (smallcnt>0) smallcnt = 0;
+            if (smallcnt) smallcnt = 0;
             numcnt ++;
             if (numcnt>maxnum) maxnum = numcnt;
         }
         
         if (ch>='a'&&ch<='z') {
-            if (numcnt>0) numcnt = 0;
+            if (numcnt) numcnt = 0;
             smallcnt++;
             if (smallcnt>maxsmall) maxsmall = smallcnt;
         }
