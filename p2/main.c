@@ -45,6 +45,9 @@ int main(void)
         }
     }
     
+    if (numcnt>maxnum) maxnum = numcnt;
+    if (smallcnt>maxsmall) maxsmall = smallcnt;
+    
     printf("%d\n%d", maxsmall, maxnum);
     return 0;
 }
