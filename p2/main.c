@@ -5,7 +5,6 @@ int main(void)
     int N, numcnt=0, smallcnt=0;
     int maxnum=0, maxsmall=0;
     char ch;
-    bool is_in_num = false, is_in_small = false;
     
     scanf("%d\n", &N);
     
@@ -13,28 +12,17 @@ int main(void)
         scanf("%c", &ch);
         
         if (ch>='0'&&ch<='9') {
-            if (!is_in_num) {
-                is_in_num = true;
-                is_in_small = false;
-                numcnt = 1;
-            }
-            else numcnt ++;
-            
+            if (smallcnt>0) smallcnt = 0;
+            numcnt ++;
             if (numcnt>maxnum) maxnum = numcnt;
         }
         
         if (ch>='a'&&ch<='z') {
-            if (!is_in_small) {
-                is_in_small = true;
-                is_in_num = false;
-                smallcnt = 1;
-            }
-            else smallcnt++;
-            
+            if (numcnt>0) numcnt = 0;
+            smallcnt++;
             if (smallcnt>maxsmall) maxsmall = smallcnt;
         }
     }
-    
     printf("%d\n%d", maxsmall, maxnum);
     return 0;
 }
