@@ -7,7 +7,7 @@ int main(void)
     char ch;
     bool is_in_num = false, is_in_small = false;
     
-    scanf("%d", &N);
+    scanf("%d\n", &N);
     
     for(int i=0; i<N; i++) {
         scanf("%c", &ch);
