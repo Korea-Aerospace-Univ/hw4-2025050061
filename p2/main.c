@@ -17,36 +17,27 @@ int main(void)
         is_small = (ch>='a'&&ch<='z');
         
         if (is_num) {
-            numcnt++;
-            is_in_small = false;
-            smallcnt = 0;
-            if (is_in_num) {
-                if (numcnt > maxnum) {
-                    maxnum = numcnt;
-                }
-            }
-            else {
+            if (!is_in_num) {
                 is_in_num = true;
+                is_in_small = false;
+                numcnt = 1;
             }
+            else numcnt ++;
+            
+            if (numcnt>maxnum) maxnum = numcnt;
         }
         
         if (is_small) {
-            smallcnt++;
-            is_in_num = false;
-            numcnt = 0;
-            if (is_in_small) {
-                if (smallcnt > maxsmall) {
-                    maxsmall = smallcnt;
-                }
-            }
-            else {
+            if (!is_in_small) {
                 is_in_small = true;
+                is_in_num = false;
+                smallcnt = 1;
             }
+            else smallcnt++;
+            
+            if (smallcnt>maxsmall) maxsmall = smallcnt;
         }
     }
-    
-    if (numcnt>maxnum) maxnum = numcnt;
-    if (smallcnt>maxsmall) maxsmall = smallcnt;
     
     printf("%d\n%d", maxsmall, maxnum);
     return 0;
